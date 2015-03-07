@@ -1,3 +1,5 @@
+/// <reference path="../../../bower_components/dt-jasmine/jasmine.d.ts" />
+/// <reference path="../../../bower_components/dt-angular/angular-mocks.d.ts" />
 'use strict';
 
 describe('Filter: duration', function () {
