@@ -8,6 +8,8 @@ var $ = require('gulp-load-plugins')();
 
 gulp.task('scripts', function () {
   return gulp.src(paths.src + '/{app,components}/**/*.ts')
+    .pipe($.tslint())
+    .pipe($.tslint.report('verbose'))
     .pipe($.typescript({
       noEmitOnError: true,
       target: 'ES5'

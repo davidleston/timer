@@ -9,11 +9,11 @@ interface IMainScope extends ng.IScope {
 }
 
 angular.module('timerApp')
-  .controller('MainCtrl', function ($scope : IMainScope, $interval : ng.IIntervalService, $window : ng.IWindowService) {
+  .controller('MainCtrl', function ($scope: IMainScope, $interval: ng.IIntervalService, $window: ng.IWindowService) {
     var storageKey = 'mins';
-    var interval:ng.IPromise<any>;
+    var interval: ng.IPromise<any>;
 
-    var storedMins = parseInt($window.localStorage.getItem(storageKey));
+    var storedMins = parseInt($window.localStorage.getItem(storageKey), 10);
     $scope.inputMins = isNaN(storedMins) ? 1 : storedMins;
 
     $scope.target = 0;
