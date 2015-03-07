@@ -44,4 +44,4 @@ gulp.task('clean', function (done) {
   $.del([paths.dist + '/', paths.tmp + '/'], done);
 });
 
-gulp.task('build', ['html']);
+gulp.task('build', ['test', 'html']);
