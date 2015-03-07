@@ -1,0 +1,28 @@
+@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/variables";
+
+main {
+  padding: 10%;
+  opacity: .93;
+  text-align: center;
+}
+.progress {
+  width: 100%;
+  height:100%;
+  position: fixed;
+  background-color: $brand-warning;
+}
+.progress-bar {
+  width: 100%;
+  height: 0; // otherwise height starts as auto and the first animation doesn't work
+  position: absolute;
+  bottom: 0;
+  transition: height 199ms linear;
+  background-color: $brand-primary;
+}
+pre {
+  font-size: 400%;
+  font-weight: bold;
+}
+
+// injector
+// endinjector
