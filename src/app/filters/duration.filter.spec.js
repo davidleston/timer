@@ -3,7 +3,7 @@
 describe('Filter: duration', function () {
 
   // load the filter's module
-  beforeEach(module('stefTimerApp'));
+  beforeEach(module('timerApp'));
 
   // initialize a new instance of the filter before each test
   var duration;

@@ -11,12 +11,13 @@ var paths = gulp.paths;
 function runTests (singleRun, done) {
   var bowerDeps = wiredep({
     directory: 'bower_components',
-    exclude: ['bootstrap-sass-official'],
+    exclude: ['bootstrap-sass-official', 'jquery'],
     dependencies: true,
     devDependencies: true
   });
 
   var testFiles = bowerDeps.js.concat([
+    paths.tmp + '/serve/{app,components}/**/*.js',
     paths.src + '/{app,components}/**/*.js'
   ]);
 

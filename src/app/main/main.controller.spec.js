@@ -17,7 +17,7 @@ describe('controllers', function(){
   it('cancels a countdown currently in progress', inject(function ($interval) {
     $scope.start();
     expect($scope.up).toBe(0);
-    $interval.flush(100);
+    $interval.flush(200);
     expect($scope.up > 0).toBeTruthy();
     $scope.start();
     expect($scope.up).toBe(0);
