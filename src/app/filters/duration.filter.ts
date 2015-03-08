@@ -11,7 +11,7 @@ angular.module('timerApp')
     };
     return function (milliseconds: number) {
       var seconds = Math.floor(milliseconds / 1000) % 60;
-      var minutes = Math.floor(milliseconds / 1000 / 60) % 60;
+      var minutes = Math.floor(milliseconds / 1000 / 60);
       return format(minutes) + ':' + format(seconds);
     };
   });
