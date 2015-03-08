@@ -5,9 +5,6 @@ main {
   opacity: .93;
   text-align: center;
 }
-body {
-  background-color: $brand-warning;
-}
 time {
   width: 100%;
   height: 0; // otherwise height starts as auto and the first animation doesn't work
