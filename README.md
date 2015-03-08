@@ -16,5 +16,6 @@ Change directory to the root of this project and run the following:
 
 1. `npm install`
 2. `npm install -g gulp`
-3. `bower install`
-4. `gulp build`
+3. `npm install -g bower`
+4. `bower install`
+5. `gulp build`
