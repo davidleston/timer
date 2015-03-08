@@ -2,6 +2,7 @@
 <html ng-app="timerApp">
 <head>
   <meta charset="utf-8">
+  <!-- viewport chosen because http://www.quirksmode.org/blog/archives/2013/10/initialscale1_m.html -->
   <meta name="viewport" content="initial-scale=1">
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
@@ -25,7 +26,7 @@
        ng-style="{height: ((target - up) / target * 100) + '%'}"
        title="remaining"></div>
 </div>
-<main>
+<main> <!-- 'main' is shorter than a div with a class, and it's more semantic for screen readers -->
   <pre class="alert alert-warning" title="elapsed" role="timer" ng-bind="up | duration">00:00</pre>
   <pre class="alert alert-info" title="remaining" role="timer" ng-bind="target - up + 999 | duration">00:00</pre>
   <form name="form" class="form-inline" ng-submit="start()">

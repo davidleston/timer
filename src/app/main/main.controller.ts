@@ -1,6 +1,10 @@
 /// <reference path="../../../bower_components/dt-angular/angular.d.ts" />
 'use strict';
 
+/**
+ * Property names chosen as a balance between short names (smaller HTML) and readable names.
+ * Keep an eye open for an easy way to minify these names in the future.
+ */
 interface IMainScope extends ng.IScope {
   inputMins: number;
   target: number;
@@ -12,20 +16,20 @@ angular.module('timerApp')
   .controller('MainCtrl', function ($scope: IMainScope, $interval: ng.IIntervalService, $window: ng.IWindowService) {
     var storageKey = 'mins';
     var interval: ng.IPromise<any>;
+    $scope.target = 0;
+    $scope.up = 0;
 
     var storedMins = parseInt($window.localStorage.getItem(storageKey), 10);
     $scope.inputMins = isNaN(storedMins) ? 1 : storedMins;
 
-    $scope.target = 0;
-    $scope.up = 0;
-
     $scope.start = function () {
       $window.localStorage.setItem(storageKey, $scope.inputMins.toString());
-      var startTime = new Date().getTime();
       $scope.target = $scope.inputMins * 60 * 1000;
       $scope.up = 0;
-
       $interval.cancel(interval);
+      // start the first tick as close to the start of the timer as possible,
+      // improves the first second of the animation
+      var startTime = new Date().getTime();
       var tick = function () {
         var currentTime = new Date().getTime();
         $scope.up = currentTime - startTime;
