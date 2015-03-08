@@ -21,12 +21,10 @@
   <title>Timer</title>
 </head>
 <body ng-controller="MainCtrl">
-<div class="progress" role="progressbar">
-  <div class="progress-bar"
-       ng-style="{height: ((target - up) / target * 100) + '%'}"
-       title="remaining"></div>
-</div>
-<main> <!-- 'main' is shorter than a div with a class, and it's more semantic for screen readers -->
+<!-- 'time' and 'main' is shorter than a div with a class,
+ and it's more semantic for screen readers, albeit, this is a small abuse of 'time' -->
+<time ng-style="{height: ((target - up) / target * 100) + '%'}" title="remaining"></time>
+<main>
   <pre class="alert alert-warning" title="elapsed" role="timer" ng-bind="up | duration">00:00</pre>
   <pre class="alert alert-info" title="remaining" role="timer" ng-bind="target - up + 999 | duration">00:00</pre>
   <form name="form" class="form-inline" ng-submit="start()">

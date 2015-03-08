@@ -5,13 +5,10 @@ main {
   opacity: .93;
   text-align: center;
 }
-.progress {
-  width: 100%;
-  height:100%;
-  position: fixed;
+body {
   background-color: $brand-warning;
 }
-.progress-bar {
+time {
   width: 100%;
   height: 0; // otherwise height starts as auto and the first animation doesn't work
   position: absolute;
