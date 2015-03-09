@@ -4,7 +4,6 @@ node_js:
 install:
 - npm install -g gulp bower
 - npm install
-- npm install gulp-coveralls
 - bower install -f
 before_install:
 - openssl aes-256-cbc -K $encrypted_f7bdb6c019db_key -iv $encrypted_f7bdb6c019db_iv
