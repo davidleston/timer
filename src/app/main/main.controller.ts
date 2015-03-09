@@ -13,7 +13,12 @@ interface IMainScope extends ng.IScope {
 }
 
 angular.module('timerApp')
-  .controller('MainCtrl', function ($scope: IMainScope, $interval: ng.IIntervalService, $window: ng.IWindowService) {
+  .controller('MainCtrl', function (
+    $scope: IMainScope,
+    $interval: ng.IIntervalService,
+    $window: ng.IWindowService,
+    millis: () => number
+  ) {
     var storageKey = 'mins';
     var interval: ng.IPromise<any>;
     $scope.target = 0;
@@ -29,9 +34,9 @@ angular.module('timerApp')
       $interval.cancel(interval);
       // start the first tick as close to the start of the timer as possible,
       // improves the first second of the animation
-      var startTime = new Date().getTime();
+      var startTime = millis();
       var tick = function () {
-        var currentTime = new Date().getTime();
+        var currentTime = millis();
         $scope.up = currentTime - startTime;
         if ($scope.up >= $scope.target) {
           $scope.up = $scope.target;
