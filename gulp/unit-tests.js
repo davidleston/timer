@@ -34,3 +34,7 @@ function runTests (singleRun, done) {
 
 gulp.task('test', ['scripts'], function (done) { runTests(true /* singleRun */, done) });
 gulp.task('test:auto', ['scripts'], function (done) { runTests(false /* singleRun */, done) });
+gulp.task('ci-test', ['test'], function () {
+  gulp.src('**/lcov.info')
+    .pipe(coveralls());
+});
