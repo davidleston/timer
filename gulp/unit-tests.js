@@ -8,7 +8,7 @@ var wiredep = require('wiredep');
 
 var paths = gulp.paths;
 
-function runTests (singleRun, done) {
+function runTests (singleRun) {
   var bowerDeps = wiredep({
     directory: 'bower_components',
     exclude: ['bootstrap-sass-official', 'jquery'],
@@ -21,7 +21,7 @@ function runTests (singleRun, done) {
     paths.src + '/{app,components}/**/*.js'
   ]);
 
-  gulp.src(testFiles)
+  return gulp.src(testFiles)
     .pipe($.karma({
       configFile: 'karma.conf.js',
       action: (singleRun)? 'run': 'watch'
@@ -32,9 +32,13 @@ function runTests (singleRun, done) {
     });
 }
 
-gulp.task('test', ['scripts'], function (done) { runTests(true /* singleRun */, done) });
-gulp.task('test:auto', ['scripts'], function (done) { runTests(false /* singleRun */, done) });
+gulp.task('test', ['scripts'], function () {
+  return runTests(true /* singleRun */);
+});
+gulp.task('test:auto', ['scripts'], function () {
+  return runTests(false /* singleRun */);
+});
 gulp.task('ci-test', ['test'], function () {
-  gulp.src('**/lcov.info')
-    .pipe(coveralls());
+  return gulp.src(paths.tmp + '/**/lcov.info')
+    .pipe($.coveralls());
 });
