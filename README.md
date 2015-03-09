@@ -15,7 +15,6 @@ If you don't already have `npm`, get it by installing [node.js](http://nodejs.or
 Change directory to the root of this project and run the following:
 
 1. `npm install`
-2. `npm install -g gulp`
-3. `npm install -g bower`
-4. `bower install`
-5. `gulp build`
+2. `npm install -g gulp bower`
+3. `bower install`
+4. `gulp build`
