@@ -13,8 +13,15 @@ describe('Filter: duration', function () {
     duration = $filter('duration');
   }));
 
-  it('returns the input prefixed with "duration filter:"', function () {
+  it('adds leading zeros when formatting zero', function () {
     expect(duration(0)).toBe('00:00');
   });
 
+  it('adds leading zeros when formatting non-zero but less than 10', function () {
+    expect(duration(61 * 1000)).toBe('01:01');
+  });
+
+  it('displays more than two digits of minutes', function () {
+    expect(duration(100 * 60 * 1000)).toBe('100:00');
+  });
 });
