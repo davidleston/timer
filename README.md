@@ -1,3 +1,6 @@
+Timer
+=====
+
 [![Build Status](https://travis-ci.org/davidleston/timer.svg?branch=master)](https://travis-ci.org/davidleston/timer)
 [![devDependency Status](https://david-dm.org/davidleston/timer/dev-status.svg)](https://david-dm.org/davidleston/timer#info=devDependencies)
 
@@ -18,3 +21,5 @@ Change directory to the root of this project and run the following:
 2. `npm install -g gulp bower`
 3. `bower install`
 4. `gulp build`
+
+Running `gulp serve` generates source maps allowing the browser to debug through TypeScript.
