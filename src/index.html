@@ -33,7 +33,7 @@
     <div class="input-group" ng-class="{'has-error': form.$invalid}">
       <span class="input-group-addon" id="Mins">Minutes</span>
       <input class="form-control input-lg" type="number" min="1" ng-model="inputMins"
-             step="1" aria-describedby="Mins"
+             step="1" aria-labelledby="Mins"
              pattern="[0-9]+" required>
       <span class="input-group-btn">
         <button type="submit" class="btn btn-info btn-lg" ng-disabled="form.$invalid">Start</button>
