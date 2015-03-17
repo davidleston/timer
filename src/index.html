@@ -25,8 +25,10 @@
  and it's more semantic for screen readers, albeit, this is a small abuse of 'time' -->
 <time ng-style="{height: ((target - up) / target * 100) + '%'}" title="remaining"></time>
 <main>
-  <pre class="alert alert-warning" title="elapsed" role="timer" ng-bind="up | duration">00:00</pre>
-  <pre class="alert alert-info" title="remaining" role="timer" ng-bind="target - up + 999 | duration">00:00</pre>
+  <section role="timer">
+    <pre class="alert alert-warning" title="elapsed" ng-bind="up | duration">00:00</pre>
+    <pre class="alert alert-info" title="remaining" ng-bind="target - up + 999 | duration">00:00</pre>
+  </section>
   <form name="form" class="form-inline" ng-submit="start()">
     <div class="input-group" ng-class="{'has-error': form.$invalid}">
       <span class="input-group-addon" id="Mins">Minutes</span>
