@@ -1,5 +1,4 @@
-/// <reference path="../../../bower_components/dt-jasmine/jasmine.d.ts" />
-/// <reference path="../../../bower_components/dt-angular/angular-mocks.d.ts" />
+/// <reference path="../../../typings/tsd.d.ts" />
 'use strict';
 
 describe('controllers', function(){
@@ -9,7 +8,7 @@ describe('controllers', function(){
   beforeEach(module('timerApp'));
 
   // Initialize the controller and a mock scope
-  beforeEach(inject(function ($controller: ng.IControllerService, $rootScope) {
+  beforeEach(inject(function ($controller: angular.IControllerService, $rootScope) {
     millis = 0;
     $scope = $rootScope.$new();
     $controller('MainCtrl', {

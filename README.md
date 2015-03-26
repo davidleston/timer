@@ -27,8 +27,9 @@ If you don't already have `npm`, get it by installing [node.js](http://nodejs.or
 Change directory to the root of this project and run the following:
 
 1. `npm install`
-2. `npm install -g gulp bower`
+2. `npm install -g gulp bower tsd@next`
 3. `bower install`
 4. `gulp build`
+5. `tsd reinstall --save`
 
 Running `gulp serve` generates source maps allowing the browser to debug through TypeScript.

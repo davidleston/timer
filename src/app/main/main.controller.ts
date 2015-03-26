@@ -1,11 +1,11 @@
-/// <reference path="../../../bower_components/dt-angular/angular.d.ts" />
+/// <reference path="../../../typings/tsd.d.ts" />
 'use strict';
 
 /**
  * Property names chosen as a balance between short names (smaller HTML) and readable names.
  * Keep an eye open for an easy way to minify these names in the future.
  */
-interface IMainScope extends ng.IScope {
+interface IMainScope extends angular.IScope {
   inputMins: number;
   target: number;
   up: number;
@@ -15,12 +15,12 @@ interface IMainScope extends ng.IScope {
 angular.module('timerApp')
   .controller('MainCtrl', function (
     $scope: IMainScope,
-    $interval: ng.IIntervalService,
-    $window: ng.IWindowService,
+    $interval: angular.IIntervalService,
+    $window: angular.IWindowService,
     millis: () => number
   ) {
     var storageKey = 'mins';
-    var interval: ng.IPromise<any>;
+    var interval: angular.IPromise<any>;
     $scope.target = 0;
     $scope.up = 0;
 

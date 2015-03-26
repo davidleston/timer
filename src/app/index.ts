@@ -1,4 +1,4 @@
-/// <reference path="../../bower_components/dt-angular/angular.d.ts" />
+/// <reference path="../../typings/tsd.d.ts" />
 'use strict';
 
 angular.module('timerApp', ['ngAria']);

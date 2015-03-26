@@ -40,7 +40,7 @@ gulp.task('copy', function () {
 });
 
 gulp.task('copyDefs', function () {
-  return gulp.src('bower_components/**/*.d.ts', {base: './'})
+  return gulp.src('typings/**/**.*', {base: './'})
     .pipe(gulp.dest(paths.tmp));
 });
 
