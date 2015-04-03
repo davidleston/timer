@@ -12,7 +12,7 @@ if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
   #using token clone gh-pages branch
   git clone --quiet --branch=gh-pages https://${GH_TOKEN}@github.com/Uko/Rubidium-WHOIS.git  gh-pages > /dev/null
 
-  #go into diractory and copy data we're interested in to that directory
+  #go into directory and copy data we're interested in to that directory
   cd gh-pages
   cp -Rf $HOME/dist/* .
 
@@ -21,5 +21,5 @@ if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
   git commit -m "Travis build $TRAVIS_BUILD_NUMBER pushed to gh-pages"
   git push -fq origin gh-pages > /dev/null
 
-  echo -e "Done magic with coverage\n"
+  echo -e "Done with update to gh-pages\n"
 fi

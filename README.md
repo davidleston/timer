@@ -29,7 +29,7 @@ Change directory to the root of this project and run the following:
 1. `npm install`
 2. `npm install -g gulp bower tsd@next`
 3. `bower install`
-4. `gulp build`
-5. `tsd reinstall --save`
+4. `tsd reinstall --save`
+5. `gulp build`
 
 Running `gulp serve` generates source maps allowing the browser to debug through TypeScript.
