@@ -6,6 +6,7 @@ if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
 
   #go to home and setup git
   cd $HOME
+  export GH_TOKEN=$GH_TOKEN_FOR_GH_PAGES
   git config --global user.email "travis@travis-ci.org"
   git config --global user.name "Travis"
 

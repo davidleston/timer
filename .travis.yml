@@ -10,7 +10,7 @@ before_install:
 - openssl aes-256-cbc -K $encrypted_f7bdb6c019db_key -iv $encrypted_f7bdb6c019db_iv
   -in .coveralls.yml.enc -out .coveralls.yml -d
 after_success:
-- ./update-gh-pages.sh
+- "./update-gh-pages.sh"
 env:
   global:
-    secure: FYFgP0aN6M0n3pGf1lIRkYgrQGI+WYJW2a7bNCetEYcUYVUOp89bl8v6EiEXiY/MmNfgN5uvXA9XNNpjHeQh9rJjAsHp0V1XziYtSX/kO5kE4jgS6F4TTgvZXCJ2tqmrvHrl1+tMcT1Jv0nJCmmYRY1A6m4NB0j18t8oSk4VM7w=
+    secure: KNs6ICAFZHerjSPKHN8zTCbEPYphPrmEft+dCzn7ocyckLDnSvqGFATP07uZPhcoDQGNRGPV5K1+YllpBd15d25KEfByXP7/i3VsdFvrsGuMjc3xvS0P8XPlIwCACbf2EUfAbJ32Uw4LtXft3nG6jc2w/RR2mDoYwHj/pFfUWAY=
