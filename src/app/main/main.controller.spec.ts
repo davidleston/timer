@@ -19,7 +19,7 @@ describe('controllers', function(){
     });
   }));
 
-  it('cancels a countdown currently in progress', inject(function ($interval : angular.IIntervalService) {
+  it('cancels a countdown currently in progress', inject(function ($interval: angular.IIntervalService) {
     $scope.start();
     expect($scope.up).toBe(0);
     millis = 201;

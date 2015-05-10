@@ -8,7 +8,7 @@ describe('Filter: duration', function () {
 
   // initialize a new instance of the filter before each test
   var duration;
-  beforeEach(inject(function ($filter : angular.IFilterService) {
+  beforeEach(inject(function ($filter: angular.IFilterService) {
     duration = $filter('duration');
   }));
 
