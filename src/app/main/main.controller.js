@@ -1,26 +1,13 @@
-/// <reference path="../../../typings/tsd.d.ts" />
 'use strict';
 
 /**
- * Property names chosen as a balance between short names (smaller HTML) and readable names.
+ * Scope property names chosen as a balance between short names (smaller HTML) and readable names.
  * Keep an eye open for an easy way to minify these names in the future.
  */
-interface IMainScope extends angular.IScope {
-  inputMins: number;
-  target: number;
-  up: number;
-  start(): void;
-}
-
 angular.module('timerApp')
-  .controller('MainCtrl', function (
-    $scope: IMainScope,
-    $interval: angular.IIntervalService,
-    $window: angular.IWindowService,
-    millis: () => number
-  ) {
+  .controller('MainCtrl', function ($scope, $interval, $window, millis) {
     var storageKey = 'mins';
-    var interval: angular.IPromise<any>;
+    var interval;
     $scope.target = 0;
     $scope.up = 0;
 

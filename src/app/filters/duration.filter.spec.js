@@ -1,4 +1,3 @@
-/// <reference path="../../../typings/tsd.d.ts" />
 'use strict';
 
 describe('Filter: duration', function () {
@@ -8,7 +7,7 @@ describe('Filter: duration', function () {
 
   // initialize a new instance of the filter before each test
   var duration;
-  beforeEach(inject(function ($filter: angular.IFilterService) {
+  beforeEach(inject(function ($filter) {
     duration = $filter('duration');
   }));
 

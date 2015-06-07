@@ -12,7 +12,6 @@ Tactics used to reduce download size:
 * Override Bootstrap Sass variables rather than override CSS styles
 
 Technologies used (list of buzzwords):
-* App and tests written in [TypeScript](http://www.typescriptlang.org)
 * [Sass](http://sass-lang.com)
 * [Flexbox](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Flexible_boxes)
 * [Angular](https://angularjs.org)
@@ -27,9 +26,8 @@ If you don't already have `npm`, get it by installing [node.js](http://nodejs.or
 Change directory to the root of this project and run the following:
 
 1. `npm install`
-2. `npm install -g gulp bower tsd@next`
+2. `npm install -g gulp bower`
 3. `bower install`
-4. `tsd reinstall --save`
-5. `gulp build`
+4. `gulp build`
 
 Running `gulp serve` generates source maps allowing the browser to debug through TypeScript.
