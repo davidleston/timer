@@ -50,6 +50,6 @@
     "node": ">=0.12.0"
   },
   "scripts": {
-    "test": "gulp ci-test"
+    "test": "gulp test"
   }
 }
