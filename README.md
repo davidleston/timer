@@ -30,4 +30,4 @@ Change directory to the root of this project and run the following:
 3. `bower install`
 4. `gulp build`
 
-Running `gulp serve` generates source maps allowing the browser to debug through TypeScript.
+Run `gulp serve` to run the app.

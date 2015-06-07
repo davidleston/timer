@@ -4,9 +4,9 @@ angular.module('timerApp')
   .filter('duration', function () {
     var format = function (time) {
       if (time < 10) {
-        return '0' + time.toString();
+        return '0' + time;
       }
-      return time.toString();
+      return '' + time;
     };
     return function (milliseconds) {
       var seconds = Math.floor(milliseconds / 1000) % 60;
