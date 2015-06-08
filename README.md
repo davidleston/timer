@@ -4,6 +4,7 @@ Timer
 [![Build Status](https://travis-ci.org/davidleston/timer.svg?branch=master)](https://travis-ci.org/davidleston/timer)
 [![devDependency Status](https://david-dm.org/davidleston/timer/dev-status.svg)](https://david-dm.org/davidleston/timer#info=devDependencies)
 [![Code Climate](https://codeclimate.com/github/davidleston/timer/badges/gpa.svg)](https://codeclimate.com/github/davidleston/timer)
+![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)
 
 A simple countdown timer with a focus on performance.
 
