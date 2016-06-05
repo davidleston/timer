@@ -15,7 +15,6 @@ Tactics used to reduce download size:
 
 Technologies used (list of buzzwords):
 * [Sass](http://sass-lang.com)
-* [Flexbox](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Flexible_boxes)
 * [Frameworkless JavaScript](https://twitter.com/hashtag/frameworkless)
 * [Bootstrap](http://getbootstrap.com)
 * [HTML5 semantic elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)

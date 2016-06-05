@@ -11,6 +11,20 @@ main {
   text-align: center;
 }
 
+@media screen and (orientation: landscape) {
+  pre {
+    display: inline-block;
+  }
+
+  pre {
+    width: 47%;
+  }
+
+  pre + pre {
+    margin-left: 5%;
+  }
+}
+
 time {
   width: 100%;
   height: 0; // otherwise height starts as auto and the first animation doesn't work
@@ -20,16 +34,7 @@ time {
   background-color: $brand-primary;
 }
 
-section {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 10px -15px; // spacing between pre tags inspired by http://stackoverflow.com/a/27563449/577197
-}
-
 pre {
   font-size: 400%;
   font-weight: bold;
-  flex: 1;
-  min-width: 5em;
-  margin: 0 15px;
 }

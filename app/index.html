@@ -2,8 +2,10 @@
 <html manifest="app.manifest">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="initial-scale=1">
+  <meta name="viewport" content="initial-scale=1,user-scalable=no">
 
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <!-- Place favicon.ico in the root directory -->
 
@@ -23,10 +25,8 @@
  and it's more semantic for screen readers, albeit, this is a small abuse of 'time' -->
 <time id="p" title="remaining"></time>
 <main>
-  <section role="timer">
-    <pre class="alert alert-warning" title="elapsed" id="e">00:00</pre>
-    <pre class="alert alert-info" title="remaining" id="r">00:00</pre>
-  </section>
+  <pre class="alert alert-warning" title="elapsed" id="e">00:00</pre>
+  <pre class="alert alert-info" title="remaining" id="r">00:00</pre>
   <form id="f" class="form-inline">
     <div class="input-group input-group-lg">
       <span class="input-group-addon" id="al">Minutes</span>
