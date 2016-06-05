@@ -1,12 +1,7 @@
 language: node_js
 node_js:
-- '0.12'
+- '4.4.5'
 install:
 - npm install -g gulp bower
 - npm install
 - bower install -f
-before_install:
-- openssl aes-256-cbc -K $encrypted_f7bdb6c019db_key -iv $encrypted_f7bdb6c019db_iv
-  -in .coveralls.yml.enc -out .coveralls.yml -d
-after_success:
-- gulp ci-test

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <!-- build:css styles/vendor.css -->
+  <!-- bower:css -->
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- build:css styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
+
+  <title>Timer</title>
+</head>
+<body>
+<!-- 'time' and 'main' is shorter than a div with a class,
+ and it's more semantic for screen readers, albeit, this is a small abuse of 'time' -->
+<time id="p" title="remaining"></time>
+<main>
+  <section role="timer">
+    <pre class="alert alert-warning" title="elapsed" id="e">00:00</pre>
+    <pre class="alert alert-info" title="remaining" id="r">00:00</pre>
+  </section>
+  <form id="f" class="form-inline">
+    <div class="input-group input-group-lg">
+      <span class="input-group-addon" id="al">Minutes</span>
+      <input class="form-control" type="number" min="1" id="m"
+             step="1" aria-labelledby="al"
+             required>
+      <span class="input-group-btn">
+        <button type="submit" id="s" class="btn btn-info">Start</button>
+      </span>
+    </div>
+  </form>
+</main>
+
+<!-- build:js scripts/vendor.js -->
+<!-- bower:js -->
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js scripts/plugins.js -->
+<!-- endbuild -->
+
+<!-- build:js scripts/main.js -->
+<script src="scripts/duration.js"></script>
+<script src="scripts/main.js"></script>
+<!-- endbuild -->
+<script>main(this);</script>
+</body>
+</html>

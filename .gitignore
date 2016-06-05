@@ -3,5 +3,4 @@ bower_components/
 .sass-cache/
 .tmp/
 .idea/
-dist/
 .coveralls.yml

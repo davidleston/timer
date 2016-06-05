@@ -1,10 +1,16 @@
-@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/variables";
+// bower:scss
+// endbower
+
+@import "vendor";
+@import "boostrap.overrides";
+
 
 main {
   padding: 10%;
   opacity: .93;
   text-align: center;
 }
+
 time {
   width: 100%;
   height: 0; // otherwise height starts as auto and the first animation doesn't work
@@ -13,11 +19,13 @@ time {
   transition: height 199ms linear;
   background-color: $brand-primary;
 }
+
 section {
   display: flex;
   flex-wrap: wrap;
   margin: 10px -15px; // spacing between pre tags inspired by http://stackoverflow.com/a/27563449/577197
 }
+
 pre {
   font-size: 400%;
   font-weight: bold;
@@ -25,6 +33,3 @@ pre {
   min-width: 5em;
   margin: 0 15px;
 }
-
-// injector
-// endinjector
