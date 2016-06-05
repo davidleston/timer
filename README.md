@@ -6,6 +6,8 @@ Timer
 
 A simple countdown timer with a focus on performance.
 
+[See it in action here.](https://davidleston.github.io/timer/)
+
 Tactics used to reduce download size:
 * Minification and concatenation
 * Include only needed parts of Bootstrap
