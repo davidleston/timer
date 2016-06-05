@@ -157,6 +157,15 @@ gulp.task('wiredep', () => {
 });
 
 gulp.task('build', ['lint', 'html', 'extras'], () => {
+  gulp.src(['dist/**/*'])
+    .pipe($.manifest({
+      hash: true,
+      network: ['*'],
+      filename: 'app.manifest',
+      exclude: 'app.manifest'
+    }))
+    .pipe(gulp.dest('dist'));
+
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 

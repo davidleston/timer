@@ -1,0 +1,13 @@
+CACHE MANIFEST
+
+CACHE:
+apple-touch-icon.png
+favicon.ico
+index.html
+scripts/main.js
+styles/main.css
+
+NETWORK:
+*
+
+# hash: 8e4ea8230839956659b1291eb152da66fad89255ff0e1f2263f2aa238951cbb0

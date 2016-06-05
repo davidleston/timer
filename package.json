@@ -1,6 +1,6 @@
 {
   "name": "timerApp",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -23,6 +23,7 @@
     "gulp-htmlmin": "2.0.0",
     "gulp-if": "2.0.1",
     "gulp-load-plugins": "1.2.4",
+    "gulp-manifest": "0.1.1",
     "gulp-plumber": "1.1.0",
     "gulp-sass": "2.3.1",
     "gulp-size": "2.1.0",
