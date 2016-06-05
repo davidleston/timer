@@ -69,7 +69,6 @@ gulp.task('html', ['styles', 'scripts'], () => {
       removeAttributeQuotes: true,
       removeComments: true,
       removeEmptyAttributes: true,
-      removeEmptyElements: true,
       removeOptionalTags: true,
       removeRedundantAttributes: true,
       removeScriptTypeAttributes: true,
