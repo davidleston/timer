@@ -36,11 +36,12 @@ time {
   height: 0; // otherwise height starts as auto and the first animation doesn't work
   position: absolute;
   bottom: 0;
-  transition: height 199ms linear;
+  transition: height 99ms linear;
   background-color: $brand-primary;
 }
 
 pre {
   font-size: 400%;
   font-weight: bold;
+  cursor: pointer;
 }

@@ -59,32 +59,11 @@ gulp.task('lint:test', () => {
 gulp.task('html', ['styles', 'scripts'], () => {
   return gulp.src('app/*.html')
     .pipe($.useref({searchPath: ['.tmp', 'app', '.']}))
-    .pipe($.if('*.js', $.uglify()))
     .pipe($.if('*.css', $.uncss({
       html: ['app/*.html'],
       ignore: [/.*has-error.*/]
     })))
-    .pipe($.if('*.css', $.cssnano({
-      safe: true,
-      autoprefixer: false,
-      discardComments: {removeAll: true}
-    })))
-    .pipe($.if('*.html', $.htmlmin({
-      collapseWhitespace: true,
-      collapseBooleanAttributes: true,
-      collapseInlineTagWhitespace: true,
-      decodeEntities: true,
-      removeAttributeQuotes: true,
-      removeComments: true,
-      removeEmptyAttributes: true,
-      removeOptionalTags: true,
-      removeRedundantAttributes: true,
-      removeScriptTypeAttributes: true,
-      removeStyleLinkTypeAttributes: true,
-      sortAttributes: true,
-      sortClassName: true
-    })))
-    .pipe(gulp.dest('dist'));
+    .pipe(gulp.dest('.tmp/dist'));
 });
 
 gulp.task('extras', () => {
@@ -164,7 +143,42 @@ gulp.task('wiredep', () => {
     .pipe(gulp.dest('app'));
 });
 
-gulp.task('build', ['lint', 'html', 'extras'], () => {
+gulp.task('selectors', ['lint', 'html'], () => {
+  return gulp.src(['.tmp/dist/**/*.html', '.tmp/dist/**/*.css', '.tmp/dist/**/*.js'])
+    .pipe($.selectors.run({
+        'css': ['css'],
+        'html': ['html'],
+        'js-strings': ['js']
+      }, {
+        ignores: {}
+      }
+    ))
+    .pipe($.if('*.js', $.uglify()))
+    .pipe($.if('*.css', $.cssnano({
+      safe: true,
+      autoprefixer: false,
+      discardComments: {removeAll: true}
+    })))
+    .pipe($.if('*.html', $.htmlmin({
+      collapseWhitespace: true,
+      collapseBooleanAttributes: true,
+      collapseInlineTagWhitespace: true,
+      decodeEntities: true,
+      removeAttributeQuotes: true,
+      removeComments: true,
+      removeEmptyAttributes: true,
+      removeOptionalTags: true,
+      removeRedundantAttributes: true,
+      removeScriptTypeAttributes: true,
+      removeStyleLinkTypeAttributes: true,
+      sortAttributes: true,
+      sortClassName: true
+    })))
+    .pipe(gulp.dest('dist'));
+});
+
+
+gulp.task('build', ['selectors', 'extras'], () => {
   gulp.src(['dist/**/*'])
     .pipe($.manifest({
       hash: true,
