@@ -4,12 +4,18 @@
 @import "vendor";
 @import "boostrap.overrides";
 
-
 main {
   padding: 10%;
   opacity: .93;
   text-align: center;
-  max-width: 900px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: content-box;
+}
+
+.input-group {
+  max-width: 300px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -17,9 +23,6 @@ main {
 @media screen and (orientation: landscape) {
   pre {
     display: inline-block;
-  }
-
-  pre {
     width: 47%;
   }
 
