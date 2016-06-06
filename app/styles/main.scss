@@ -36,7 +36,7 @@ time {
   height: 0; // otherwise height starts as auto and the first animation doesn't work
   position: absolute;
   bottom: 0;
-  transition: height 99ms linear;
+  transition: height 101ms linear;
   background-color: $brand-primary;
 }
 

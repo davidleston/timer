@@ -13,6 +13,7 @@ function main(window) {
 
   let storageKey = 'mins';
   var interval;
+  var toggle;
   var storedMins = parseInt(localStorage.getItem(storageKey), 10);
   minutesInput.value = isNaN(storedMins) ? 1 : storedMins;
 
@@ -23,7 +24,8 @@ function main(window) {
     var up;
     var pauseTime;
     clearInterval(interval);
-    let start = () => interval = setInterval(tick, 100);
+    elapsedElement.removeEventListener('click', toggle);
+    remainingElement.removeEventListener('click', toggle);
 
     // start the first tick as close to the start of the timer as possible,
     // improves the first second of the animation
@@ -34,28 +36,29 @@ function main(window) {
       if (up >= target) {
         up = target;
         clearInterval(interval);
-        interval = null;
-        elapsedElement.removeEventListener('click', toggle);
-        remainingElement.removeEventListener('click', toggle);
       }
       progressBar.style.height = (target - up) / target * 100 + '%';
       elapsedElement.innerHTML = duration(up);
       remainingElement.innerHTML = duration(target - up + 999);
     };
 
-    let toggle = () => {
-      if (interval) {
-        clearInterval(interval);
-        pauseTime = millis();
-        interval = null;
-      } else {
+    let start = () => {
+      tick();
+      interval = setInterval(tick, 100);
+    };
+
+    toggle = () => {
+      if (pauseTime) {
         let currentTime = millis();
         let offset = currentTime - pauseTime;
         startTime += offset;
+        pauseTime = 0;
         start();
+      } else {
+        clearInterval(interval);
+        pauseTime = millis();
       }
     };
-    tick();
     start();
     elapsedElement.addEventListener('click', toggle);
     remainingElement.addEventListener('click', toggle);
