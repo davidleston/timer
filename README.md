@@ -5,6 +5,7 @@ Timer
 ![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)
 
 A simple countdown timer with a focus on performance.
+~4kb download with a cold cache and <100ms to render with a warm cache.
 
 [See it in action here.](https://davidleston.github.io/timer/)
 
