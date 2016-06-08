@@ -3,7 +3,7 @@ function duration(milliseconds) {
     if (time < 10) {
       return '0' + time;
     }
-    return '' + time;
+    return time;
   };
 
   let seconds = Math.floor(milliseconds / 1000) % 60;

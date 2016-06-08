@@ -1,12 +1,15 @@
 <!doctype html>
-<html manifest="app.manifest">
+<html manifest="e.manifest">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="initial-scale=1,user-scalable=no">
 
+  <title>Timer</title>
+
+  <meta name="viewport" content="initial-scale=1,user-scalable=no">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
   <!-- Place favicon.ico in the root directory -->
 
   <!-- build:css styles/vendor.css -->
@@ -17,8 +20,6 @@
   <!-- build:css styles/main.css -->
   <link rel="stylesheet" href="styles/main.css">
   <!-- endbuild -->
-
-  <title>Timer</title>
 </head>
 <body>
 <!-- 'time' and 'main' is shorter than a div with a class,
@@ -29,12 +30,10 @@
   <pre class="alert alert-info" title="remaining" id="remainingElement">00:00</pre>
   <form id="formElement">
     <div class="input-group input-group-lg">
-      <span class="input-group-addon" id="minutesLabel">Minutes</span>
-      <input class="form-control" type="number" min="1" id="minutesInput"
-             step="1" aria-labelledby="minutesLabel"
-             required>
+      <span class="input-group-addon">Minutes</span>
+      <input class="form-control" type="number" min="1" step="1" id="minutesInput" required>
       <span class="input-group-btn">
-        <button type="submit" id="submitButton" class="btn btn-info">Start</button>
+        <button id="submitButton" class="btn btn-info">Start</button>
       </span>
     </div>
   </form>

@@ -5,7 +5,7 @@ Timer
 ![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)
 
 A simple countdown timer with a focus on performance.
-~7kb download with a cold cache and <100ms to render with a warm cache.
+~ 4 kb download with a cold cache and < 100 ms to render with a warm cache.
 
 [See it in action here.](https://davidleston.github.io/timer/)
 
@@ -19,7 +19,6 @@ Technologies used (list of buzzwords):
 * [Frameworkless JavaScript](https://twitter.com/hashtag/frameworkless)
 * [Bootstrap](http://getbootstrap.com)
 * [HTML5 semantic elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
-* [Accessible Rich Internet Applications (ARIA)](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA)
 
 ## Build
 

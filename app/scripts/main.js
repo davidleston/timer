@@ -12,20 +12,21 @@ function main(window) {
   let localStorage = window.localStorage;
 
   let storageKey = 'mins';
+  let click = 'click';
+  let hasError = 'has-error';
   var interval;
-  var toggle;
+  var toggle = () => {};
   var storedMins = parseInt(localStorage.getItem(storageKey), 10);
+
   minutesInput.value = isNaN(storedMins) ? 1 : storedMins;
 
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
     localStorage.setItem(storageKey, minutesInput.value);
     let target = minutesInput.valueAsNumber * 60 * 1000;
     var up;
     var pauseTime;
     clearInterval(interval);
-    elapsedElement.removeEventListener('click', toggle);
-    remainingElement.removeEventListener('click', toggle);
 
     // start the first tick as close to the start of the timer as possible,
     // improves the first second of the animation
@@ -60,17 +61,21 @@ function main(window) {
       }
     };
     start();
-    elapsedElement.addEventListener('click', toggle);
-    remainingElement.addEventListener('click', toggle);
   });
 
+  let toggleEventListener = () => {
+    toggle();
+  };
+  elapsedElement.addEventListener(click, toggleEventListener);
+  remainingElement.addEventListener(click, toggleEventListener);
+
   minutesInput.addEventListener('input', () => {
-    form.classList.remove('has-error');
+    form.classList.remove(hasError);
     submitButton.disabled = false;
     minutesInput.checkValidity();
   });
   minutesInput.addEventListener('invalid', () => {
-    form.classList.add('has-error');
+    form.classList.add(hasError);
     submitButton.disabled = true;
   });
 }

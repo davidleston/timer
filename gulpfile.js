@@ -178,13 +178,19 @@ gulp.task('selectors', ['lint', 'html'], () => {
 });
 
 
-gulp.task('build', ['selectors', 'extras'], () => {
+gulp.task('inline', ['selectors', 'extras'], () => {
+  return gulp.src(['dist/index.html'])
+    .pipe($.inline())
+    .pipe(gulp.dest('dist'));
+});
+
+gulp.task('deleteLeftover', ['inline'], del.bind(null, ['dist/scripts', 'dist/styles']));
+
+gulp.task('build', ['deleteLeftover'], () => {
   gulp.src(['dist/**/*'])
     .pipe($.manifest({
       hash: true,
-      network: ['*'],
-      filename: 'app.manifest',
-      exclude: 'app.manifest'
+      filename: 'e.manifest'
     }))
     .pipe(gulp.dest('dist'));
 
