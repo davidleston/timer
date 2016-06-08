@@ -5,7 +5,7 @@ Timer
 ![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)
 
 A simple countdown timer with a focus on performance.
-~ 3 kb download with a cold cache and < 100 ms to render with a warm cache.
+~ 3 kb to download with a cold cache. < 30 ms to render with a warm cache [measured using this method](http://www.tuanhuynh.com/blog/2015/measuring-first-paint-time-in-chrome/).
 
 [See it in action here.](https://davidleston.github.io/timer/)
 
