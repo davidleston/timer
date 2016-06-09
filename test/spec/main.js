@@ -8,7 +8,7 @@
       var tick;
       var lastTime = new Date().getTime();
       let window = {
-        f: {
+        formElement: {
           addEventListener: function (eventName, callback) {
             start = function () {
               callback({
@@ -17,15 +17,18 @@
             };
           }
         },
-        p: {
+        progressElement: {
           style: {}
         },
-        e: {},
-        r: {},
-        m: {
+        elapsedElement: {
           addEventListener: noop
         },
-        s: {},
+        remainingElement: {
+          addEventListener: noop
+        },
+        minutesInput: {
+          addEventListener: noop
+        },
         setInterval: function (callback) {
           tick = callback;
         },
@@ -45,12 +48,12 @@
       };
       new main(window);
       start();
-      expect(window.e.innerHTML).to.equal('00:00');
+      expect(window.elapsedElement.innerHTML).to.equal('00:00');
       lastTime = lastTime + 1000;
       tick();
-      expect(window.e.innerHTML).to.not.equal('00:00');
+      expect(window.elapsedElement.innerHTML).to.not.equal('00:00');
       start();
-      expect(window.e.innerHTML).to.equal('00:00');
+      expect(window.elapsedElement.innerHTML).to.equal('00:00');
     });
   });
 })();
