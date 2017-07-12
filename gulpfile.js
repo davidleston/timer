@@ -17,7 +17,7 @@ gulp.task('styles', () => {
       precision: 10,
       includePaths: ['.']
     }).on('error', $.sass.logError))
-    .pipe($.autoprefixer({browsers: ['> 20%', 'last 1 version']}))
+    .pipe($.autoprefixer({browsers: ['last 1 Chrome version', 'last 1 iOS version', 'last 1 Safari version', 'last 1 Firefox version', 'last 1 Edge version']}))
     .pipe($.sourcemaps.write())
     .pipe(gulp.dest('.tmp/styles'))
     .pipe(reload({stream: true}));
